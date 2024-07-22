@@ -75,8 +75,8 @@ const Workers = () => {
     setSelectedPriceRange([0, 100000]); // Reset to default max price
   };
 
-  if (maidsError || categoriesError) return <div>Failed to load data</div>;
-  if (!maidsData || !categoriesData) return <div>Loading...</div>;
+  // if (maidsError || categoriesError) return <div>Failed to load data</div>;
+  // if (!maidsData || !categoriesData) return <div>Loading...</div>;
 
   return (
     <div className="w-full mx-auto mt-[20px] flex flex-col ">
