@@ -134,7 +134,7 @@ const Workers = () => {
       </div>
       <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-20 pt-[20%] md:pt-[15%] z-0">
         {filteredMaids.map((maid) => (
-          <Card key={maid._id} className="relative shadow-md py-4 md:p-4">
+          <Card key={maid._id} className="relative shadow-md py-4 md:p-4 scale-[90%] md:scale-100">
             <CardHeader>
               <div className="flex items-center justify-center">
                 <Avatar className="absolute top-0 mt-[-15%]">
