@@ -1,9 +1,10 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { useParams } from "next/navigation";
 
 const fetchMaidDetails = async (id) => {
   const response = await fetch(`/api/maids/${id}`);
@@ -17,7 +18,9 @@ const MaidDetails = () => {
   const [maid, setMaid] = useState(null);
 
   useEffect(() => {
-    fetchMaidDetails(id).then(data => setMaid(data));
+    if (id) {
+      fetchMaidDetails(id).then(data => setMaid(data));
+    }
   }, [id]);
 
   if (!maid) {
@@ -44,6 +47,10 @@ const MaidDetails = () => {
             <div className="flex items-center">
               <span className="text-primary text-[18px]">Review:</span>
               <span className="ml-1">{maid.review.join(", ")}</span>
+            </div>
+            <div className="flex items-center">
+              <span className="text-primary text-[18px]">Languages:</span>
+              <span className="ml-1">{maid.languages.join(", ")}</span>
             </div>
             {maid.documentUrl && (
               <div className="flex items-center">

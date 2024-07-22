@@ -26,7 +26,8 @@ export async function POST(request) {
     documentUrl,
     documentKey,
     documentName,
-    isAvailable
+    isAvailable,
+    languages // Add this line
   } = await request.json();
   const maid = await Maid.create({
     name,
@@ -41,7 +42,8 @@ export async function POST(request) {
     documentUrl,
     documentKey,
     documentName,
-    isAvailable
+    isAvailable,
+    languages // Add this line
   });
   return NextResponse.json({ maid });
 }

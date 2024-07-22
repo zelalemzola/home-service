@@ -97,7 +97,7 @@ const Workers = () => {
                 className="border p-2 rounded text-black bg-white"
               >
                 <option value="">Select category...</option>
-                {categoriesData.categories.map((category) => (
+                {categoriesData && categoriesData.categories.map((category) => (
                   <option key={category._id} value={category._id}>
                     {category.name}
                   </option>
@@ -132,7 +132,7 @@ const Workers = () => {
           </DialogContent>
         </Dialog>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-20 pt-[20%] md:pt-[15%] z-0">
+      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-20 pt-[20%] md:pt-[15%] z-0">
         {filteredMaids.map((maid) => (
           <Card key={maid._id} className="relative shadow-md py-4 md:p-4">
             <CardHeader>
@@ -143,12 +143,13 @@ const Workers = () => {
                 </Avatar>
               </div>
               <CardTitle className="pt-[5%]">
-                <h2 className="card-title text-primary font-bold text-[20px]">{maid.name}</h2>
+                <h2 className="card-title text-primary font-bold text-[14px] md:text-[20px] ">{maid.name}</h2>
               </CardTitle>
               <CardDescription>
-                <span className="text-primary text-[18px]">Price:</span>
+                <span className="text-primary text-[12px] first-line:md:text-[18px]">Price:</span>
                 <span className="ml-1">${maid.price}/Month</span>
               </CardDescription>
+             
             </CardHeader>
             <CardFooter className="flex items-center justify-center">
               <Link href={`/workers/${maid._id}`} passHref>
