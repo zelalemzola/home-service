@@ -26,7 +26,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const Maids = () => {
+const Workers = () => {
   const { data: maidsData, error: maidsError } = useSWR("/api/maids", fetcher, {
     refreshInterval: 5000, // Re-fetch every 5 seconds
   });
@@ -165,4 +165,4 @@ const Maids = () => {
   );
 };
 
-export default Maids;
+export default Workers;
