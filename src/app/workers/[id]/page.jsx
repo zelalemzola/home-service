@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -16,15 +16,36 @@ const MaidDetails = () => {
   const { id } = useParams();
   const router = useRouter();
   const [maid, setMaid] = useState(null);
+  const [newReview, setNewReview] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     if (id) {
-      fetchMaidDetails(id).then(data => setMaid(data));
+      fetchMaidDetails(id).then(data => {
+        setMaid(data);
+        setReviews(data.review || []);
+      });
     }
   }, [id]);
 
+  const handleReviewSubmit = async () => {
+    if (!newReview) return;
+
+    const response = await fetch(`/api/maids/${id}/reviews`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ review: newReview }),
+    });
+
+    const updatedMaid = await response.json();
+    setReviews(updatedMaid.maid.review);
+    setNewReview("");
+  };
+
   if (!maid) {
-    return <div>Loading...</div>;
+    return <div className="flex items-center justify-center">Loading...</div>;
   }
 
   return (
@@ -67,6 +88,32 @@ const MaidDetails = () => {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="w-full mt-4">
+        <h3 className="text-xl font-bold">Reviews:</h3>
+        {reviews.length > 0 ? (
+          <ul className="list-disc pl-5">
+            {reviews.map((review, index) => (
+              <li key={index} className="text-black">{review}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-black">No reviews yet.</p>
+        )}
+      </div>
+
+      <div className="w-full mt-4">
+        <h3 className="text-xl font-bold">Add a Review:</h3>
+        <textarea
+          value={newReview}
+          onChange={(e) => setNewReview(e.target.value)}
+          className="w-full p-2 border rounded"
+          placeholder="Write your review here"
+        />
+        <Button onClick={handleReviewSubmit} className="mt-2">
+          Submit Review
+        </Button>
       </div>
     </div>
   );

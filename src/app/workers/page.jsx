@@ -80,11 +80,11 @@ const Workers = () => {
 
   return (
     <div className="w-full mx-auto mt-[20px] flex flex-col ">
-      <div className="w-full flex flex-wrap items-center justify-between fixed top-0 z-30 bg-white border-b rounded-2xl px-[10%] py-3 shadow-md">
+      <div className="w-full flex flex-wrap items-center justify-between fixed top-0 z-30 bg-white border-b rounded-b-2xl px-[10%] py-3 shadow-md">
         <p className="text-primary text-lg md:text-2xl font-bold">Available Workers</p>
         <Dialog className="flex-end">
           <DialogTrigger>
-            <Button className="flex items-center gap-3">Filter <FilterIcon /></Button>
+            <Button className="flex items-center gap-3 bg-primary hover:bg-primary">Filter <FilterIcon /></Button>
           </DialogTrigger>
           <DialogContent className="px-2">
             <DialogHeader className="mx-auto">
@@ -134,7 +134,7 @@ const Workers = () => {
       </div>
       <div className="flex flex-wrap items-center justify-center gap-x-2 md:gap-x-8 gap-y-20 pt-[20%] md:pt-[15%] z-0">
         {filteredMaids.map((maid) => (
-          <Card key={maid._id} className="relative shadow-md py-4 md:p-4 scale-[90%] md:scale-100">
+          <Card key={maid._id} className="relative shadow-lg py-4 md:p-4 scale-[90%] md:scale-100 bg-primary text-white">
             <CardHeader>
               <div className="flex items-center justify-center">
                 <Avatar className="absolute top-0 mt-[-15%]">
@@ -143,17 +143,16 @@ const Workers = () => {
                 </Avatar>
               </div>
               <CardTitle className="pt-[5%]">
-                <h2 className="card-title text-primary font-bold text-[14px] md:text-[20px] ">{maid.name}</h2>
+                <h2 className="card-title text-primary font-bold text-[14px] md:text-[20px] text-white">{maid.name}</h2>
               </CardTitle>
               <CardDescription>
-                <span className="text-primary text-[12px] first-line:md:text-[18px]">Price:</span>
-                <span className="ml-1">${maid.price}/Month</span>
+                <span className="text-primary text-[12px] first-line:md:text-[18px] text-white">Price:</span>
+                <span className="ml-1 text-white">${maid.price}/Month</span>
               </CardDescription>
-             
             </CardHeader>
             <CardFooter className="flex items-center justify-center">
               <Link href={`/workers/${maid._id}`} passHref>
-                <Button className="flex items-center gap-3">View Detail <Eye /></Button>
+                <Button className="flex items-center gap-3 bg-secondary hover:bg-secondary">View Detail <Eye /></Button>
               </Link>
             </CardFooter>
           </Card>
