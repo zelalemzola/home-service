@@ -4,7 +4,7 @@ import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Eye, FilterIcon, GraduationCap, NotebookText } from "lucide-react";
+import { ChevronRight, Eye, FilterIcon, GraduationCap, NotebookText } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -112,9 +112,9 @@ const Workers = () => {
           <DialogTrigger>
             <Button className="flex items-center gap-3 bg-primary hover:bg-primary">Filter <FilterIcon /></Button>
           </DialogTrigger>
-          <DialogContent className="px-2">
+          <DialogContent className="px-2 sm:w-[96%] rounded-xl">
             <DialogHeader className="mx-auto">
-              <DialogTitle>Apply filters</DialogTitle>
+              <DialogTitle className='text-primary text-lg'>Apply filters</DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-start space-x-2 mb-4 lg:mb-0">
               <select
@@ -129,9 +129,9 @@ const Workers = () => {
                   </option>
                 ))}
               </select>
-              <div className="flex flex-col gap-3 py-2">
+              <div className="flex flex-col  gap-3 py-2 ">
                 <label className="text-black">Filter by Price:</label>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 flex-col md:flex-row  gap-y-2">
                   <input
                     type="number"
                     name="min"
@@ -139,7 +139,7 @@ const Workers = () => {
                     onChange={handlePriceRangeChange}
                     className="border p-1 rounded text-black w-fit"
                   />
-                  <span>-</span>
+                  <p className="text-center font-bold">-</p>
                   <input
                     type="number"
                     name="max"
@@ -209,10 +209,10 @@ const Workers = () => {
       <div className="flex flex-col md:flex-row items-center  gap-6 ">
       <div className="flex items-center flex-col  gap-3 bg-primary text-white w-[90%] md:w-1/2 rounded-2xl p-2">
         <span className=" text-[18px] flex items-center gap-2"><GraduationCap color="white"/>Experience:</span>
-        <span className="ml-1">
+        <span className="ml-1 flex flex-col gap-2">
         {maid.experience.map((exp,index)=>(
     <div className="" key={index}>
-       <p className="text-sm">{exp}</p>
+       <p className="text-sm flex items-center gap-2">  <ChevronRight />{exp}</p>
     </div>
    ))}
         </span>
@@ -223,7 +223,7 @@ const Workers = () => {
    <div className="flex flex-col gap-1">
    {maid.review.map((rev,index)=>(
     <div className="" key={index}>
-       <p className="text-sm">{rev}</p>
+       <p className="text-sm flex items-center gap-2">  <ChevronRight />{rev}</p>
     </div>
    ))}
   
