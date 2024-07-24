@@ -218,7 +218,7 @@ const Workers = () => {
         </span>
       </div>
       <div className="flex items-center flex-col gap-4 w-[90%] md:w-1/2 rounded-2xl p-2 text-white bg-primary">
-        <span className=" text-[18px] flex items-center gap-2">  <NotebookText color="white"/>Review:</span>
+        <span className=" text-[18px] flex items-center gap-2">  <NotebookText color="white"/>Reviews:</span>
         <span className="ml-1">
    <div className="flex flex-col gap-1">
    {maid.review.map((rev,index)=>(
