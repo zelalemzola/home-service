@@ -201,7 +201,7 @@ const Workers = () => {
       <div className="flex items-center gap-2 flex-wrap">
         <span className="text-primary text-[18px]">Can Speak:</span>
         <span className="flex flex-wrap gap-2">{maid.languages.map((lang,index)=>(
-          <p className=" p-1 rounded-full bg-primary text-white text-sm" key={index}>{lang}</p>
+          <p className=" p-1 rounded-full bg-orange-500 text-white text-sm" key={index}>{lang}</p>
         ))
           }</span>
       </div>
@@ -240,7 +240,7 @@ const Workers = () => {
   <textarea
     value={newReview}
     onChange={(e) => setNewReview(e.target.value)}
-    className="w-[80%] md:w-1/3 p-2 border rounded"
+    className="w-[80%] md:w-1/2 p-2 border rounded"
     placeholder="Write your review here"
   />
   <Button onClick={()=>handleReviewSubmit(maid._id)} className="mt-2 hover:bg-primary">
