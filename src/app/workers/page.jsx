@@ -210,7 +210,7 @@ const Workers = () => {
           }</span>
       </div> 
       </div>  
-             <h1 className="flex items-center gap-2 rounded-2xl  p-2 bg-orange-600 text-white w-fit  absolute top-0 right-0 m-3 md:m-10">To hire <Phone/> 9080</h1>
+             <h1 className="flex items-center gap-2 rounded-2xl  p-2 bg-[#a88905] text-white w-fit  absolute top-0 right-0 m-3 md:m-10">To hire <Phone/> 9080</h1>
 
       <div className="flex flex-col md:flex-row items-center  gap-6 ">
       <div className="flex items-center flex-col  gap-3 bg-primary text-white w-[90%] md:w-1/2 rounded-2xl p-2">
