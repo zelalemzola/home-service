@@ -4,7 +4,7 @@ import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Eye, FilterIcon, GraduationCap, NotebookText } from "lucide-react";
+import { ArrowLeft, ChevronRight, Eye, FilterIcon, GraduationCap, House, NotebookText, Phone, Undo2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -31,6 +31,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -103,11 +105,12 @@ const Workers = () => {
 
   // if (maidsError || categoriesError) return <div>Failed to load data</div>;
   // if (!maidsData || !categoriesData) return <div>Loading...</div>;
-
+  const router = useRouter();
   return (
     <div className="w-full mx-auto mt-[20px] flex flex-col ">
       <div className="w-full flex flex-wrap items-center justify-between fixed top-0 z-30 bg-white border-b rounded-b-2xl px-[10%] py-3 shadow-md">
-        <p className="text-primary text-lg md:text-2xl font-bold">Available Workers</p>
+      <Link href='/'><ArrowLeft fontWeight='bold' size={33} className="text-white bg-primary font-bold p-1 rounded-full md:scale-200 cursor-pointer" /></Link>
+        <p className="text-primary text-lg md:text-2xl font-bold flex items-center gap-6">Available Workers</p>
         <Dialog className="flex-end">
           <DialogTrigger>
             <Button className="flex items-center gap-3 bg-primary hover:bg-primary">Filter <FilterIcon /></Button>
@@ -160,7 +163,7 @@ const Workers = () => {
       </div>
       <div className="flex flex-wrap items-center justify-center gap-x-2 md:gap-x-8 gap-y-20 pt-[20%] md:pt-[15%] z-0">
         {filteredMaids.map((maid) => (
-          <Card key={maid._id} className="relative shadow-lg py-4 md:p-4 scale-[90%] md:scale-100 bg-primary text-white">
+          <Card key={maid._id} className="relative shadow-lg py-4 md:p-4 scale-[90%] md:scale-100 bg-primary text-white hover:shadow-xl">
             <CardHeader>
               <div className="flex items-center justify-center">
                 <Avatar className="absolute top-0 mt-[-15%]">
@@ -188,24 +191,27 @@ const Workers = () => {
                       <DrawerHeader className='flex flex-col items-center justify-center'>
                       <DrawerTitle> <Image src={maid.imageUrl} alt={maid.name} width={80} height={80} className="rounded-full" /></DrawerTitle>
                       <DrawerDescription>
+                      
                       <h2 className="card-title text-primary font-bold text-[32px] capitalize">{`${maid.name} ${maid.fathersName}`}</h2>
                       </DrawerDescription>
                     </DrawerHeader>
-                   
                     <div className="text-black font-bold text-[17px]">
      <div className="flex flex-wrap items-center gap-4 justify-center pb-4">
       <div className="flex items-center gap-2 flex-wrap">
         <span className="text-primary text-[18px] capitalize">{`${maid.name} requires`}</span>
         <span className="ml-1">{`$${maid.price} per Month`}</span>
-      </div>
+      </div>   
+
       <div className="flex items-center gap-2 flex-wrap">
         <span className="text-primary text-[18px]">Speaks:</span>
         <span className="flex flex-wrap gap-2">{maid.languages.map((lang,index)=>(
           <p className=" p-1 rounded-full bg-[#a88905] text-white text-sm" key={index}>{lang}</p>
         ))
           }</span>
-      </div>
-      </div>
+      </div> 
+      </div>  
+             <h1 className="flex items-center gap-2 rounded-2xl  p-2 bg-orange-600 text-white w-fit  absolute top-0 right-0 m-3 md:m-10">To hire <Phone/> 9080</h1>
+
       <div className="flex flex-col md:flex-row items-center  gap-6 ">
       <div className="flex items-center flex-col  gap-3 bg-primary text-white w-[90%] md:w-1/2 rounded-2xl p-2">
         <span className=" text-[18px] flex items-center gap-2"><GraduationCap color="white"/>Experience:</span>
@@ -268,20 +274,3 @@ const Workers = () => {
 
 export default Workers;
 
-
-{/* <div className="flex flex-col items-center  mx-auto h-[80%] overflow-y-auto">
-<div className="card bg-secondary shadow-md mb-4 w-full">
-  
-  <div className="card-body">
-
-    
-    <div className="card-actions flex justify-between mt-2">
-      <Button onClick={() => router.back()} className="bg-primary text-white p-2 rounded-full hover:bg-black">
-        Go Back
-      </Button>
-    </div>
-  </div>
-</div>
-
-
-</div> */}

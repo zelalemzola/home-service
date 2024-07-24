@@ -2,8 +2,10 @@ import { Button } from '@/components/ui/button'
 import { GroupIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import useSWR from 'swr';
 
-const page = () => {
+const Home = () => {
+  
   return (
     <div className=' flex items-center justify-center h-screen w-full'>
      <Button className='bg-cyan-800 hover:bg-cyan-900'>
@@ -15,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Home;
