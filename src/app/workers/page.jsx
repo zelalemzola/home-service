@@ -199,9 +199,9 @@ const Workers = () => {
         <span className="ml-1">{`$${maid.price} per Month`}</span>
       </div>
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-primary text-[18px]">Can Speak:</span>
+        <span className="text-primary text-[18px]">Speaks:</span>
         <span className="flex flex-wrap gap-2">{maid.languages.map((lang,index)=>(
-          <p className=" p-1 rounded-full bg-orange-500 text-white text-sm" key={index}>{lang}</p>
+          <p className=" p-1 rounded-full bg-[#a88905] text-white text-sm" key={index}>{lang}</p>
         ))
           }</span>
       </div>
