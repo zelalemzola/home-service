@@ -187,7 +187,7 @@ const Workers = () => {
                      <Button className="flex items-center gap-3 bg-secondary hover:bg-secondary" >View Detail <Eye /></Button>  
                   </DrawerTrigger>
                   <DrawerContent className='h-[95%] '>
-                     <div className="h-[80%] overflow-y-auto px-6">
+                     <div className="h-[85%] overflow-y-auto px-6">
                       <DrawerHeader className='flex flex-col items-center justify-center'>
                       <DrawerTitle> <Image src={maid.imageUrl} alt={maid.name} width={80} height={80} className="rounded-full" /></DrawerTitle>
                       <DrawerDescription>
