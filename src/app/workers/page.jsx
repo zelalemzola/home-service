@@ -112,7 +112,7 @@ const Workers = () => {
           <DialogTrigger>
             <Button className="flex items-center gap-3 bg-primary hover:bg-primary">Filter <FilterIcon /></Button>
           </DialogTrigger>
-          <DialogContent className="px-2 sm:w-[96%] rounded-xl">
+          <DialogContent className="px-2 w-[96%] md:w-fit rounded-xl">
             <DialogHeader className="mx-auto">
               <DialogTitle className='text-primary text-lg'>Apply filters</DialogTitle>
             </DialogHeader>
