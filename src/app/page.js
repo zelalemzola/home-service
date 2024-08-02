@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Profiles from '../../public/profiles.png';
 import Filter from '../../public/filter.png';
 import Detail from '../../public/det.png';
-import { Phone } from 'lucide-react';
+import { MousePointerClick, Phone } from 'lucide-react';
 
 
 
@@ -92,7 +92,7 @@ const Home = () => {
    </div>
   </div>
    <div className='bg-secondary p-2 px-2 text-white text-md font-bold w-fit fixed top-0 right-0 mt-[10%] rounded-l-full'>
-    <Link href='/workers'>Find Workers</Link>
+    <Link href='/workers' className='flex items-center gap-2'><MousePointerClick color='white' size={14}/> Find Workers</Link>
    </div>
   </div>
   )
