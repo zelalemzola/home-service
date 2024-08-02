@@ -92,7 +92,7 @@ const Home = () => {
    </div>
   </div>
    <div className='bg-secondary p-2 px-2 text-white text-md font-bold w-fit fixed top-0 right-0 mt-[10%] rounded-l-full'>
-    <Link href='/workers' className='flex items-center gap-2'><MousePointerClick color='white' size={14}/> Find Workers</Link>
+    <Link href='/workers' className='flex items-center gap-2'><MousePointerClick color='white' size={16}/> Find Workers</Link>
    </div>
   </div>
   )
