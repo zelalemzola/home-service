@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import { Fraunces, Inter, Italianno, Libre_Baskerville, Merriweather, Playfair_Display, Tinos } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Merriweather({ subsets: ["latin"],weight:['300'] });
 
 export const metadata = {
   title: "Create Next App",
