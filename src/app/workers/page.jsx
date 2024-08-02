@@ -102,10 +102,10 @@ const Workers = () => {
     setSelectedCategory("");
     setSelectedPriceRange([0, 100000]); // Reset to default max price
   };
-  const router = useRouter();
-  if (maidsError || categoriesError) return <div>Failed to load data</div>;
-  if (!maidsData || !categoriesData) return <div>Loading...</div>;
 
+  // if (maidsError || categoriesError) return <div>Failed to load data</div>;
+  // if (!maidsData || !categoriesData) return <div>Loading...</div>;
+  const router = useRouter();
   return (
     <div className="w-full mx-auto mt-[20px] flex flex-col ">
       <div className="w-full flex flex-wrap items-center justify-between fixed top-0 z-30 bg-white border-b rounded-b-2xl px-[10%] py-3 shadow-md">
