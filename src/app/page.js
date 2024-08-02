@@ -32,7 +32,7 @@ const Home = () => {
         </Button>
     </div>
     <div className='scale-[60%] md:scale-[100%] flex flex-col items-center gap-4 px-[100px] md:px-20 rounded-full bg-secondary py-6 md:py-6 '>
-    <div className="flex items-center gap-4">
+    <div className="flex  gap-4">
       <Image src='/baby.svg' alt='taking care' width={100} height={100} />
       <Image src='/clean.svg' alt='taking care' width={170} height={170}/>
       </div>
