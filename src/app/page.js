@@ -42,8 +42,8 @@ const Home = () => {
   </div>
   <div className="md:h-screen md:w-full flex flex-col items-center gap-10 md:px-20 md:py-8 ">
     <h1 className='text-primary text-4xl  font-extrabold'>Who We Are</h1>
-    <div className="flex flex-col md:flex-row items-center justify-between px-20">
-    <p className='md:w-[60%] font-semibold text-sm md:text-2xl text-secondary'>We are dedicated to connect you with professional, trustworthy, and skilled Workers who understand your unique home requirements. With our easy-to-use platform, finding the right help has never been simpler.</p>
+    <div className="flex flex-col md:flex-row items-center justify-between px-8 md:px-20">
+    <p className='md:w-[60%] font-semibold text-lg md:text-2xl text-secondary'>We are dedicated to connect you with professional, trustworthy, and skilled Workers who understand your unique home requirements. With our easy-to-use platform, finding the right help has never been simpler.</p>
     <Image src='/about.svg' alt='connect' width={370} height={370} className='scale-[60%] md:scale-[100%]  '/>
     </div>
 
@@ -83,7 +83,7 @@ const Home = () => {
     <div className="flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between">
       <div className="flex flex-col gap-6 lg:gap-4 items-center md:w-1/2">
    <h1 className='text-white text-2xl md:text-3xl font-extrabold mx-auto'>What Makes Us A Better Choice</h1>
-   <p className='text-white text-md text-center'>We believe in empowering individuals to find the best solutions for their home needs.Even after Offering multiple Different Workers in One Platform where Clients can filter and choose after Hiring a worker client will be provided with a full background of the worker in a document format which will provide more safety for the client and also gain more knowledge about the Worker</p>
+   <p className='text-white text-md text-center'>We believe in empowering individuals to find the best solutions for their home needs.Even after offering multiple Proffessionals in one platform where clients can filter and choose after Hiring a worker client will be provided with a full background of the worker in a document format which will provide more safety for the client and also gain more knowledge about the Worker</p>
    </div>
       <div className="flex flex-col  items-center gap-4 lg:gap-8 md:w-1/2">
    <h1 className='text-white text-3xl font-extrabold text-center'>Give Us Call</h1>
