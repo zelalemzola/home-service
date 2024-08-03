@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Profiles from '../../public/profiles.png';
 import Filter from '../../public/filter.png';
 import Detail from '../../public/det.png';
-import { MousePointerClick, Phone } from 'lucide-react';
+import { MousePointerClick, Phone, Search } from 'lucide-react';
 
 
 
@@ -25,9 +25,9 @@ const Home = () => {
     <div className='flex flex-col items-start  gap-4 flex-2'>
       <h1 className='text-4xl text-primary font-bold '>Find the Right Person to Aid You at Home</h1>
       <p className='text-gray-500 text-lg'>Choose, Filter, and Hire Tailored to Your Needs</p>
-      <Button className='rounded-full bg-secondary hover:bg-primary'>
+      <Button className='rounded-full bg-secondary hover:bg-primary animate-bounce shadow-md'>
       <Link href='/workers'>
-        Find Workers
+        Search Workers
           </Link>
         </Button>
     </div>
@@ -91,8 +91,8 @@ const Home = () => {
    </div>
    </div>
   </div>
-   <div className='bg-secondary p-2 px-2 text-white text-md font-bold w-fit fixed top-0 right-0 mt-[10%] rounded-l-full'>
-    <Link href='/workers' className='flex items-center gap-2'><MousePointerClick color='white' size={16}/> Find Workers</Link>
+   <div className='bg-secondary hover:bg-secondary p-2 px-2 text-white text-md font-bold w-fit fixed top-0 right-0 mt-[10%] rounded-l-full animate-bounce shadow-lg'>
+    <Link href='/workers' className='flex items-center gap-2 bg-secondary '><Search color='white'  size={22} /> Search Workers</Link>
    </div>
   </div>
   )
