@@ -21,7 +21,7 @@ const Home = () => {
   {/* <div className='flex items-center justify-end gap-60 px-6 fixed top-0 border-b py-2 w-full text-primary text-lg font-semibold font-sans'>
     <Link href='/workers'>Find Workers</Link>
   </div> */}
-  <div className='md:h-screen md:w-full md:px-4 pt-[35%] pb-10 md:py-[20%] place-content-center'>
+  <div className='md:h-screen md:w-full md:px-4 pt-[35%] pb-10 md:py-[10%] place-content-center'>
    <div className='flex flex-col md:flex-row items-center   md:gap-5 justify-between px-10'>
     <div className='flex flex-col items-start  gap-4 flex-2'>
       <h1 className='text-4xl text-primary font-bold '>Find the Right Person to Aid You at Home</h1>
