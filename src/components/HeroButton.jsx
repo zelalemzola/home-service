@@ -52,7 +52,7 @@ const HeroButton = () => {
 
   return (
      <Button className='rounded-full bg-secondary hover:bg-primary animate-bounce shadow-md' asChild>
-      <Link href='/wk'>
+      <Link href='/workers'>
         Search Workers
           </Link>
         </Button>
