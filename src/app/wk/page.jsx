@@ -38,10 +38,10 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Workers = () => {
   const { data: maidsData, error: maidsError } = useSWR("/api/maids", fetcher, {
-    refreshInterval: 1000, // Re-fetch every 2 seconds
+    refreshInterval: 2000, // Re-fetch every 2 seconds
   });
   const { data: categoriesData, error: categoriesError } = useSWR("/api/categories", fetcher, {
-    refreshInterval: 1000, // Re-fetch every 1 seconds
+    refreshInterval: 10000, // Re-fetch every 60 seconds
   });
 
   const [filteredMaids, setFilteredMaids] = useState([]);

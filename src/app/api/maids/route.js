@@ -12,6 +12,8 @@ export async function GET(request) {
   return NextResponse.json({ maids });
 }
 
+
+
 export async function POST(request) {
   const {
     name,

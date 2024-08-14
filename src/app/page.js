@@ -9,6 +9,7 @@ import Profiles from '../../public/profiles.png';
 import Filter from '../../public/filter.png';
 import Detail from '../../public/det.png';
 import { MousePointerClick, Phone, Search } from 'lucide-react';
+import HeroButton from '@/components/HeroButton';
 
 
 
@@ -25,11 +26,7 @@ const Home = () => {
     <div className='flex flex-col items-start  gap-4 flex-2'>
       <h1 className='text-4xl text-primary font-bold '>Find the Right Person to Aid You at Home</h1>
       <p className='text-gray-500 text-lg'>Choose, Filter, and Hire Tailored to Your Needs</p>
-      <Button className='rounded-full bg-secondary hover:bg-primary animate-bounce shadow-md'>
-      <Link href='/workers'>
-        Search Workers
-          </Link>
-        </Button>
+      <HeroButton/> 
     </div>
     <div className='scale-[60%] md:scale-[100%] flex flex-col items-center gap-4 px-[100px] md:px-20 rounded-full bg-secondary py-6 md:py-6 '>
     <div className="flex  gap-4">
